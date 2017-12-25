@@ -15,7 +15,7 @@ This package contains a set of nodes that can be used to run visual servoing dem
 Two launch file for demonstrations are provided:
 
 - Demonstration with real turtlebot (Video available HERE)
-- Simulation with gazebo (Video available HERE)
+- Simulation with gazebo (Video available [HERE](https://youtu.be/-IIlRZ5Ic-g))
 
 ##### Installation
 - Install ROS and create a catkin workspace
