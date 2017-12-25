@@ -1,0 +1,43 @@
+<!-- -*- xml -*- -->
+<launch>
+  <param name="/camera_prefix" type="string" value="/" />
+
+  <!-- Launch gazebo FOR SIMULATION -->
+  <arg name="world_file"  default="$(env TURTLEBOT_GAZEBO_WORLD_FILE)"/>
+  <arg name="base"      value="$(optenv TURTLEBOT_BASE kobuki)"/> <!-- create, roomba -->
+  <arg name="stacks"    value="$(optenv TURTLEBOT_STACKS hexagons)"/>  <!-- circles, hexagons -->
+  <arg name="gui" default="true"/>
+  <arg name="3d_sensor" value="$(optenv TURTLEBOT_3D_SENSOR kinect)"/>  <!-- kinect, asus_xtion_pro --> 
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="world_name" value="/home/mscv/ros/indigo/catkin_ws/src/vs_turtlebot/marker_world.world"/>
+  </include>
+
+  <!-- Launch 3d sensor OR WE CAN DO IT SEPARATELY -->
+<!--  <include file="$(find turtlebot_gazebo)/launch/includes/$(arg base).launch.xml">
+    <arg name="base" value="$(arg base)"/>
+    <arg name="stacks" value="$(arg stacks)"/>
+    <arg name="3d_sensor" value="$(arg 3d_sensor)"/>
+  </include> -->
+
+  <!-- Launch the tracking node -->
+  <node pkg="visp_auto_tracker" type="visp_auto_tracker" name="visp_auto_tracker">
+    <param name="model_path" type="string" value="$(find visp_auto_tracker)/models" />
+    <param name="model_name" type="string" value="pattern" />
+    <param name="debug_display" value="True" />
+	      
+    <remap from="/visp_auto_tracker/camera_info" to="/camera/rgb/camera_info"/>
+    <remap from="/visp_auto_tracker/image_raw" to="/camera/rgb/image_raw"/>	
+  </node>
+
+  <!-- % rosrun servo_turtlebot visual_servo_turtlebot_node --> 
+  <node respawn="true" pkg="vs_turtlebot" type="visual_servo_turtlebot_node" name="visual_servo_turtlebot_node" output="screen">
+     <remap from="/object_position" to="/visp_auto_tracker/object_position" />
+     <remap from="/vs/pioneer/cmd_vel" to="/mobile_base/commands/velocity" />
+    <remap from="/camera_info" to="/camera/rgb/camera_info"/>
+  </node>
+ 
+</launch>
