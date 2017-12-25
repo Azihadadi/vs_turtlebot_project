@@ -46,7 +46,7 @@ Two launch file for demonstrations are provided:
 
   `rosdep install vs_turtlebot`
 
--Build the source
+- Build the source
 
   `cd ~/catkin_ws`
 
