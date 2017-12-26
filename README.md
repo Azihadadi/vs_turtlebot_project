@@ -14,9 +14,11 @@ This package contains a set of nodes that can be used to run visual servoing dem
 
 Two launch file for demonstrations are provided:
 
-- Demonstration with real turtlebot (Video available HERE)
-- Simulation with gazebo (Video available [HERE](https://youtu.be/-IIlRZ5Ic-g))
-  -  Setting simulation environment [HERE](https://github.com/anissalintang/vs_turtlebot_project/blob/master/Simulation_setting.md)
+- Demonstration with real turtlebot (Video available **HERE**)
+- Simulation with gazebo (Video available [**HERE**](https://youtu.be/-IIlRZ5Ic-g))
+  -  Setting simulation environment [**HERE**](https://github.com/anissalintang/vs_turtlebot_project/blob/master/Simulation_setting.md)
+
+Technical Report regarding the project can be found more detail in ([**HERE**](https://github.com/anissalintang/vs_turtlebot_project/blob/master/Technical_Report.md))
 
 ##### Installation
 - Install ROS and create a catkin workspace
