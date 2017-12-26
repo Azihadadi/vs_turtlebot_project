@@ -18,7 +18,7 @@ Two launch file for demonstrations are provided:
 - Simulation with gazebo (Video available [**HERE**](https://youtu.be/-IIlRZ5Ic-g))
   -  Setting simulation environment [**HERE**](https://github.com/anissalintang/vs_turtlebot_project/blob/master/Simulation_setting.md)
 
-Technical Report regarding the project can be found more detail in ([**HERE**](https://github.com/anissalintang/vs_turtlebot_project/blob/master/Technical_Report.md))
+Technical Report regarding the project can be found more detail in [**HERE**](https://github.com/anissalintang/vs_turtlebot_project/blob/master/Technical_Report.md)
 
 ##### Installation
 - Install ROS and create a catkin workspace
