@@ -14,7 +14,7 @@ This package contains a set of nodes that can be used to run visual servoing dem
 
 Two launch file for demonstrations are provided:
 
-- Demonstration with real turtlebot (Video available **HERE**)
+- Demonstration with real turtlebot (Video available [**HERE**](https://youtu.be/G6fqDPOnTvg))
 - Simulation with gazebo (Video available [**HERE**](https://youtu.be/-IIlRZ5Ic-g))
   -  Setting simulation environment [**HERE**](https://github.com/anissalintang/vs_turtlebot_project/blob/master/Simulation_setting.md)
 
