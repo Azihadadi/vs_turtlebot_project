@@ -10,10 +10,14 @@ Hardware used:
 
 Software used:
 - Gazebo (simulator)
-- VISP library
 
 Programming language used:
 - C++
+
+Dependencies:
+- rosconsole
+- roscpp
+- visp_bridge
 
 In the implementation of this package, Visual Servoing Platform (VISP) library is used. It allows prototyping and developing applications using visual tracking and visual servoing technics at the heart of the researches done by Inria Lagadic team. ViSP is able to compute control laws that can be applied to robotic systems. It provides a set of visual features that can be tracked using real time image processing or computer vision algorithms.
 
